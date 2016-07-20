@@ -1,0 +1,29 @@
+@mixin btn($color) {
+  table {
+    td {
+      background: $color;
+      border: 2px solid $color;
+    }
+    a {
+      border: 0 solid $color;
+    }
+  }
+}
+@mixin btn-hover($color) {
+  table {
+    td {
+      background: darken($color, 10%);
+    }
+    a {
+      border: 0 solid darken($color, 10%);
+    }
+  }
+}
+@each $location, $color in $gmics {
+  table.button.#{$location} {
+    @include btn($color);
+  }
+  table.button.#{$location}:hover {
+    @include btn-hover($color);
+  }
+}

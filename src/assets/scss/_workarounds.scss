@@ -1,0 +1,8 @@
+.button {
+  &.expand,
+  &.expanded {
+    td:not(.expander) {
+      width: 100%;
+    }
+  }
+}
